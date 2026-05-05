@@ -43,7 +43,7 @@ jobs:
         run: sleep 20
 
       - name: Check staging health
-        run: curl -f https://SimpleDevProj-staging.azurewebsites.net/health
+        run: curl -f https://simpledevproj-staging-c9cyhyfrc3hudwfm.westeurope-01.azurewebsites.net/health
 
   deploy-production:
     needs: build-and-deploy-staging
