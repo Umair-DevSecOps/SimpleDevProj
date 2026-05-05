@@ -36,7 +36,7 @@ jobs:
       - name: Deploy to STAGING
         uses: azure/webapps-deploy@v2
         with:
-          app-name: SimpleDevProj-staging
+          app-name: simpledevproj-staging_group
           images: ${{ secrets.DOCKERHUB_USERNAME }}/devops-app:${{ env.IMAGE_TAG }}
 
   deploy-production:
@@ -53,5 +53,5 @@ jobs:
       - name: Deploy to PRODUCTION
         uses: azure/webapps-deploy@v2
         with:
-          app-name: SimpleDevProj
+          app-name: devproj
           images: ${{ secrets.DOCKERHUB_USERNAME }}/devops-app:latest
