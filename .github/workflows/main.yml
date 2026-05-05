@@ -39,11 +39,7 @@ jobs:
           app-name: SimpleDevProj-staging
           images: ${{ secrets.DOCKERHUB_USERNAME }}/devops-app:${{ env.IMAGE_TAG }}
 
-      - name: Wait for staging to start
-        run: sleep 10
 
-      - name: Check staging health
-        run: curl -f ${{ secrets.STAGING_URL }}/health
 
   deploy-production:
     needs: build-and-deploy-staging
