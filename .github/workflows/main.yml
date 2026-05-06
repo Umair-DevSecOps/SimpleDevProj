@@ -39,6 +39,11 @@ jobs:
           app-name: SimpleDevProj-staging
           images: ${{ secrets.DOCKERHUB_USERNAME }}/devops-app:${{ env.IMAGE_TAG }}
 
+      - name: Tag as stable
+        run: |
+          docker tag ${{ secrets.DOCKERHUB_USERNAME }}/devops-app:${{ env.IMAGE_TAG }} \
+                     ${{ secrets.DOCKERHUB_USERNAME }}/devops-app:stable
+          docker push ${{ secrets.DOCKERHUB_USERNAME }}/devops-app:stable
 
 
   deploy-production:
@@ -56,4 +61,4 @@ jobs:
         uses: azure/webapps-deploy@v2
         with:
           app-name: SimpleDevProj
-          images: ${{ secrets.DOCKERHUB_USERNAME }}/devops-app:latest
+          images: ${{ secrets.DOCKERHUB_USERNAME }}/devops-app:stable
