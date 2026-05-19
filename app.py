@@ -1,11 +1,16 @@
 import os
 from flask import Flask
+from azure.monitor.opentelemetry import configure_azure_monitor
+
+configure_azure_monitor(
+    connection_string=os.getenv("APPLICATIONINSIGHTS_CONNECTION_STRING")
+)
 
 app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return "App is running!  12345 zxy 7890"
+    return "App is running! 12345 zxy 7890"
 
 @app.route("/health")
 def health():
