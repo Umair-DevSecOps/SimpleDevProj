@@ -8,6 +8,10 @@ configure_azure_monitor(
 
 app = Flask(__name__)
 
+@app.route("/fail")
+def fail():
+    return 1 / 0
+
 @app.route("/")
 def home():
     return "App is running! 12345 zxy 7890"
