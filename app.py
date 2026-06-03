@@ -10,7 +10,7 @@ def fail():
 
 @app.route("/")
 def home():
-    return "App is running!"
+    return "App is running! 123456"
 
 @app.route("/health")
 def health():
