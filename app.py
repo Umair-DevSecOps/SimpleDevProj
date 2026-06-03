@@ -1,6 +1,5 @@
 import os
 from flask import Flask
-from azure.monitor.opentelemetry import configure_azure_monitor
 
 )
 
